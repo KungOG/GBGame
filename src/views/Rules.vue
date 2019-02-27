@@ -7,7 +7,7 @@
             if the correct number is higher or lower than the last guess. When the correct answer
             is given, the game is over.</p>
             <p>Good luck!</p>
-            <a href="#" class="btn">Back</a>
+            <a href="#" class="btn" @click="$router.push('/menu')">Back</a>
         </section>
     </main>
 </template>

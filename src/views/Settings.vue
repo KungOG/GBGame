@@ -12,6 +12,9 @@
             <div>Håkan</div>
             <div>Miriam</div>
         </section>
+        <section>
+            <a href="#" class="btn" @click="$router.push('/menu')">Back</a>
+        </section>
     </main>
 </template>
 
