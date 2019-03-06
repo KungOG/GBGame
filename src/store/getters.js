@@ -1,1 +1,5 @@
-export default {}
+export default {
+    getData(state){
+        return state.questions;
+    }
+}

@@ -1,18 +1,45 @@
-<template>
-  <main class="home">
+
+<template>  
     <section class="content">
-      <h2>WhatEverGameName</h2>
-      <h3>How well do you really know your Gothenburg?</h3>
-      <p>Test your skills here against our players: <br>
-        Glenn, Håkan or Miriam.</p>
-      <h4>Good luck!</h4>
-      <a href="#" class="btn">Skicka vidare</a>
+        <h3>Login</h3>
+        <input type="email" v-model="email" placeholder="Email">
+        <br>
+        <input type="password" v-model="password" placeholder="Password">
+        <br>
+        <button class="buttonsubmit" @click="login">Submit</button>
+        <p>You don't have an account yet? You can create one</p>
+        <router-link to="/signup">here</router-link>
     </section>
-  </main>
 </template>
 
+<script>
+import firebase from 'firebase'
+export default {
+    name: 'login',
+    data () {
+        return {
+            email: '',
+            password: '',
+        }
+    },
+    methods: {
+        login: function () {
+            firebase
+                .auth()
+                .signInWithEmailAndPassword(this.email, this.password)
+                .then(
+                    user => {
+                        this.$router.replace('highscore');
+                    },
+                    err => {
+                        alert('Whops, something wrong happend!' + err.message);
+                    }
+                );
+        }
+    }
+}
+</script>
 <style lang="scss">
-@import "../scss/main.scss";
+  @import "../scss/main.scss";
 
 </style>
-

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import firebase from 'firebase'
 
+
 Vue.use(Router)
 
 const router = new Router({
@@ -37,9 +38,9 @@ const router = new Router({
       component: () => import('./views/Signup.vue')
     },
     {
-      path: '/login',
-      name: 'login',
-      component: () => import('./views/Login.vue')
+      path: '/game',
+      name: 'game',
+      component: () => import('./views/Game.vue')
     }
   ]
 })
