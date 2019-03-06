@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import index from './store/index'
 import {fb} from './firebase-config'
 
 Vue.config.productionTip = false
@@ -11,7 +11,7 @@ fb.auth().onAuthStateChanged(() => {
   if (!app) {
     app = new Vue({
       router,
-      store,
+      index,
       render: (h) => h(App)
     }).$mount('#app');
   }
